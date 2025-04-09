@@ -1,182 +1,59 @@
 "use client";
 
-import Container from "../components/container";
-import { Button } from "../components/ui/button";
-import { cn } from "../lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const navLinks = [
-  {
-    displayedName: "Homepage",
-    href: "#home",
-  },
-  {
-    displayedName: "Who We Are",
-    href: "#who-we-are",
-  },
-  {
-    displayedName: "Assignments",
-    href: "#assignments",
-  },
-  {
-    displayedName: "Final Project",
-    href: "#final-project",
-  },
+  { displayedName: "Home", href: "#home" },
+  { displayedName: "Who We Are", href: "#who-we-are" },
+  { displayedName: "Services", href: "#services" },
 ];
 
-const ulVariants = {
-  hidden: {
-    opacity: 0,
-    height: 0,
-  },
-  visible: {
-    opacity: 1,
-    height: "auto",
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-      delayChildren: 0.1,
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const liVariants = {
-  hidden: { opacity: 0, y: -3 },
-  visible: { opacity: 1, y: 0 },
-};
-
 export default function Header() {
-  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
-  const [showHeader, setShowHeader] = useState<boolean>(false);
-  const [navOpen, setNavOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    const checkLargeScreen = () => {
-      const lgScreenPx = parseInt(
-        getComputedStyle(document.documentElement)
-          .getPropertyValue("--lg-screen")
-          .trim(),
-        10
-      );
-      setIsLargeScreen(window.innerWidth >= lgScreenPx);
-    };
-
-    checkLargeScreen();
-    window.addEventListener("resize", checkLargeScreen);
-
-    return () => {
-      window.removeEventListener("resize", checkLargeScreen);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isLargeScreen) {
-      setNavOpen(false);
-    }
-  }, [setNavOpen, isLargeScreen]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const hasScrolled = scrollPosition > 200;
-      setShowHeader(hasScrolled);
-      setNavOpen((prev) => {
-        if (!hasScrolled) {
-          return false;
-        }
-        return prev;
-      });
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [setNavOpen, setShowHeader]);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.header
-      initial={{ opacity: 0, translateY: "-100%" }}
-      animate={{
-        translateY: showHeader ? 0 : "-100%",
-        opacity: showHeader ? 1 : 0,
-      }} // Animazione show/hide
-      transition={{ duration: 0.2, ease: "easeOut" }}
-      className="fixed top-0 w-full border-b z-[999] text-foreground bg-background/60 backdrop-blur-md"
-    >
-      <Container>
-        <nav>
-          <div className="flex justify-between items-center p-1 sm:p-3 xs:p-2">
-            <h1 className="text-lg font-bold">IncApache</h1>
-            <div className="inline-flex gap-3 lg:gap-12">
-              {isLargeScreen && (
-                <ul className="inline-flex gap-6 items-center text-sm">
-                  {navLinks.map((link, index) => (
-                    <li key={index}>
-                      <Link to={link.href}>{link.displayedName}</Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+    <header className="bg-primary text-primary-foreground">
+      <div className="flex justify-between items-center py-4 md:py-6 px-4 mx-auto w-full md:max-w-9/10">
+        <img className="z-10 w-[175px]" src="./logo.svg" alt="ELAIOS logo" />
 
-              <button
-                onClick={() => setNavOpen((prev) => !prev)}
-                className="lg:hidden"
-              >
-                <ChevronDown
-                  className={cn(
-                    "transition-transform duration-300 ease-in-out",
-                    navOpen && "rotate-180"
-                  )}
-                />
-              </button>
-              <Button asChild className="py-1 font-bold rounded-full">
-                <Link to={""}>Our Works</Link>
-              </Button>
-            </div>
-          </div>
-          <AnimatePresence>
-            {navOpen && (
-              <motion.ul
-                variants={ulVariants}
-                initial="hidden"
-                animate="visible"
-                exit={{
-                  height: 0,
-                  opacity: 0,
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.1,
-                  },
-                }}
-                className="px-1 text-xs sm:px-3 xs:px-2 overflow-clip"
-              >
-                {navLinks.map((link, index) => (
-                  <motion.li
-                    exit={{ x: -3, opacity: 0 }}
-                    variants={liVariants}
-                    key={index}
-                    className="mb-2"
-                  >
-                    <Link
-                      to={link.href}
-                      className="flex py-1 px-2 w-full rounded-xl transition-all hover:bg-primary/5"
-                    >
-                      {link.displayedName}
-                    </Link>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            )}
-          </AnimatePresence>
+        {/* Desktop Nav */}
+        <nav className="hidden md:block text-base font-medium">
+          <ul className="flex gap-6">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link to={link.href}>{link.displayedName}</Link>
+              </li>
+            ))}
+          </ul>
         </nav>
-      </Container>
-    </motion.header>
+
+        {/* Mobile Burger Icon */}
+        <button
+          className="md:hidden z-20"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-60 pb-4" : "max-h-0"
+        }`}
+      >
+        <ul className="flex flex-col items-center gap-4 text-base font-medium">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link to={link.href} onClick={() => setIsOpen(false)}>
+                {link.displayedName}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
   );
 }

@@ -4,16 +4,19 @@
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
-  --color-background: 180 100% 100%;
-  --color-foreground: 190 13% 18%;
+  --color-background: hsl(45, 100%, 99%);
+  --color-foreground: hsl(0, 0%, 10%);
 
-  --color-primary: 195 40% 54%;
-  --color-primary-foreground: var(--background);
+  --color-primary: hsl(212, 100%, 27%);
+  --color-primary-foreground: hsl(48, 100%, 50%);
 
-  --color-secondary: 210 40% 96.1%;
-  --color-secondary-foreground: 222.2 47.4% 11.2%;
+  --color-secondary: hsl(210 40% 96.1%);
+  --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
 
-  --color-border: 214.3 31.8% 91.4%;
+  --color-border: hsl(214.3 31.8% 91.4%);
+  --color-deep: hsl(219, 100%, 13%);
+
+  --color-card: hsl(44, 78%, 92%);
 
   --breakpoint-xl: 420px;
 
@@ -28,7 +31,7 @@
   }
 
   * {
-    @apply border-border;
+    @apply border-border box-border;
   }
 
   body {
