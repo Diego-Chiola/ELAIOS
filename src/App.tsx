@@ -8,7 +8,7 @@ function App() {
       <Header />
       <Container className="bg-background min-h-screen text-2xl font-medium text-center pt-8">
         <p className="px-8 md:px-0">
-          Exploring Literary and Archaeological Insights On ancient oil Studies
+          Exploring Literary and Archaeological Insights on ancient Oil Studies
         </p>
       </Container>
       <Footer />
