@@ -4,9 +4,9 @@ import Container from "./components/container";
 
 function App() {
   return (
-    <main>
+    <main className="flex flex-col min-h-dvh bg-background">
       <Header />
-      <Container className="bg-background min-h-screen text-2xl font-medium text-center pt-8">
+      <Container className="pt-8 text-2xl font-medium text-center">
         <p className="px-8 md:px-0">
           Exploring Literary and Archaeological Insights on ancient Oil Studies
         </p>
