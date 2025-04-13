@@ -7,6 +7,7 @@ const config: Config = {
     fontFamily: {
       sans: ['var(--font-sans)', 'sans-serif'],
       serif: ['var(--font-serif)', 'serif'],
+      accent: ['var(--font-accent)', 'serif'],
     },
     extend: {
       screens: {
