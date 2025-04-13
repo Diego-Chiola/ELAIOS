@@ -29,6 +29,16 @@
   --radius-lg: 0.5rem;
   --radius-md: 0.5rem - 2px;
   --radius-sm: 0.5rem - 4px;
+
+  --header-height: 4rem;
+  --footer-height: 5rem;
+
+  /* Tainwd CSS */
+  --spacing-screen-real: calc(
+    100vh - var(--header-height) - var(--footer-height)
+  );
+  --spacing-header: var(--header-height);
+  --spacing-footer: var(--footer-height);
 }
 
 @layer base {

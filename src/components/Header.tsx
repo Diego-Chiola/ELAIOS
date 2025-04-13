@@ -13,7 +13,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed z-10 w-full shadow-xl md:static bg-primary text-primary-foreground">
+    <header className="fixed z-10 w-full shadow-xl md:static bg-primary text-primary-foreground h-[var(--header-height)]">
       <div className="flex justify-between items-center py-4 px-8">
         <h1 className="text-3xl font-accent">
           <Link to="/ELAIOS">ELAIOS</Link>

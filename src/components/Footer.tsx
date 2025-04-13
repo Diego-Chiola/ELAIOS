@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="mt-auto pt-16">
-      <div className="flex justify-evenly p-6 bg-primary text-primary-foreground">
+    <footer className="mt-auto">
+      <div className="flex justify-evenly p-6 h-[var(--footer-height)] bg-primary text-primary-foreground">
         <div className="w-full">
           <div className="w-fit">
             <h1 className="font-serif font-bold text-lg/3">Bombo</h1>
