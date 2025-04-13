@@ -16,7 +16,7 @@ export default function HomePage() {
 
       <Container className="mt-12">
         <main className="flex flex-col justify-center items-center">
-          <h1 className="text-7xl sm:text-9xl xs:text-8xl font-accent md:text-[200px]">
+          <h1 className="text-7xl font-medium sm:text-9xl xs:text-8xl font-accent md:text-[200px]">
             ELAIOS
           </h1>
         </main>
