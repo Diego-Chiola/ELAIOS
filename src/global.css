@@ -10,13 +10,13 @@
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Open Sans', sans-serif;
 
-  --color-background: hsl(45, 100%, 99%);
-  --color-foreground: hsl(0, 0%, 10%);
+  --color-background: hsl(0, 0%, 100%);
+  --color-foreground: hsl(0, 0%, 20%);
 
-  --color-primary: hsl(66, 100%, 8%);
-  --color-primary-foreground: hsl(63, 27%, 66%);
+  --color-primary: hsl(70, 10%, 51%);
+  --color-primary-foreground: hsl(0, 0%, 100%);
 
-  --color-secondary: hsl(210 40% 96.1%);
+  --color-secondary: hsl(210, 22% 71%);
   --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
 
   --color-border: hsl(214.3 31.8% 91.4%);
