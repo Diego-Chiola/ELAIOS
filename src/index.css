@@ -3,8 +3,9 @@
 @theme {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-accent: "Cinzel", serif;
 
-  --color-background: hsl(45, 100%, 99%);
+  --color-background: hsl(64, 86%, 100%);
   --color-foreground: hsl(0, 0%, 10%);
 
   --color-primary: hsl(66, 100%, 8%);
@@ -13,10 +14,12 @@
   --color-secondary: hsl(210 40% 96.1%);
   --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
 
-  --color-border: hsl(214.3 31.8% 91.4%);
+  --color-border: hsl(63, 27%, 66%);
   --color-deep: hsl(219, 100%, 13%);
+  --color-ring: hsl(222.2 84% 4.9%);
 
-  --color-card: hsl(44, 78%, 92%);
+  --color-card: hsl(66, 100%, 8%);
+  --color-card-foreground: hsl(63, 27%, 66%);
 
   --breakpoint-xl: 420px;
 
