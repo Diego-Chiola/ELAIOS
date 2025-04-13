@@ -13,15 +13,20 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-primary text-primary-foreground">
-      <div className="flex justify-between items-center py-4 px-4 mx-auto w-full md:py-6 md:max-w-9/10">
-        <img className="z-10 w-[175px]" src="./logo.svg" alt="ELAIOS logo" />
+    <header className="fixed z-10 w-full shadow-xl md:static bg-primary text-primary-foreground">
+      <div className="flex justify-between items-center py-4 px-8">
+        <h1 className="text-3xl font-accent">
+          <Link to="/ELAIOS">ELAIOS</Link>
+        </h1>
 
         {/* Desktop Nav */}
-        <nav className="hidden text-base font-medium md:block">
-          <ul className="flex gap-6">
+        <nav className="hidden text-sm md:block">
+          <ul className="flex gap-8">
             {navLinks.map(link => (
-              <li key={link.href}>
+              <li
+                key={link.href}
+                className="transition-transform hover:scale-105"
+              >
                 <Link to={link.href}>{link.displayedName}</Link>
               </li>
             ))}
@@ -30,7 +35,7 @@ export default function Header() {
 
         {/* Mobile Burger Icon */}
         <button
-          className="z-20 md:hidden"
+          className="z-20 cursor-pointer md:hidden"
           onClick={() => setIsOpen(prev => !prev)}
         >
           {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
@@ -43,9 +48,12 @@ export default function Header() {
           isOpen ? 'max-h-60 pb-4' : 'max-h-0'
         }`}
       >
-        <ul className="flex flex-col gap-4 items-center text-base font-medium">
+        <ul className="flex flex-col gap-4 items-center">
           {navLinks.map(link => (
-            <li key={link.href}>
+            <li
+              key={link.href}
+              className="transition-transform hover:scale-105"
+            >
               <Link to={link.href} onClick={() => setIsOpen(false)}>
                 {link.displayedName}
               </Link>
