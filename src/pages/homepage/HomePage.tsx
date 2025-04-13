@@ -1,6 +1,7 @@
 import Container from '../../components/Container';
 import Page from '../../components/Page';
 import LeftBg from './static/left-bg.svg';
+import RightBg from './static/right-bg.svg';
 
 export default function HomePage() {
   return (
@@ -10,13 +11,18 @@ export default function HomePage() {
         <img
           src={LeftBg}
           alt="left background"
-          className="object-contain object-left-top absolute top-0 left-0 h-[90%] w-[100%]"
+          className="object-contain object-left-top absolute top-0 left-0 w-full h-full"
+        />
+        <img
+          src={RightBg}
+          alt="right background"
+          className="hidden object-cover absolute top-0 right-0 h-full lg:block"
         />
       </div>
 
       <Container className="mt-12">
         <main className="flex flex-col justify-center items-center">
-          <h1 className="text-7xl font-medium sm:text-9xl xs:text-8xl font-accent md:text-[200px]">
+          <h1 className="text-7xl sm:text-9xl xs:text-8xl font-accent text-primary-foreground md:text-[200px]">
             ELAIOS
           </h1>
         </main>
