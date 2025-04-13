@@ -1,7 +1,6 @@
 import Container from '../../components/Container';
 import Page from '../../components/Page';
 import LeftBg from './static/left-bg.svg';
-import RightBg from './static/right-bg.svg';
 
 export default function HomePage() {
   return (
