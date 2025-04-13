@@ -7,6 +7,8 @@ import { FiMenu, FiX } from 'react-icons/fi';
 const navLinks = [
   { displayedName: 'Home', href: '#home' },
   { displayedName: 'Who We Are', href: '#who-we-are' },
+  { displayedName: 'The Project', href: '#the-project' },
+  { displayedName: 'Furthers Features', href: '#furthers-features' },
 ];
 
 export default function Header() {
