@@ -34,9 +34,7 @@
   --footer-height: 5rem;
 
   /* Tainwd CSS */
-  --spacing-screen-real: calc(
-    100vh - var(--header-height) - var(--footer-height)
-  );
+  --spacing-screen-real: calc(100vh - var(--header-height));
   --spacing-header: var(--header-height);
   --spacing-footer: var(--footer-height);
   --spacing-container: min(100%, 1000px);
