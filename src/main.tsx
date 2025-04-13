@@ -1,13 +1,18 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
-import App from "./App.tsx";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './index.css';
+import RootLayout from './layouts/RootLayout.tsx';
+import HomePage from './pages/homepage/HomePage.tsx';
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/ELAIOS" element={<RootLayout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
