@@ -40,6 +40,8 @@
   --spacing-header: var(--header-height);
   --spacing-footer: var(--footer-height);
   --spacing-container: min(100%, 1000px);
+
+  --breakpoint-xs: 420px;
 }
 
 @layer base {
