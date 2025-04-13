@@ -1,13 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const navLinks = [
-  { displayedName: "Home", href: "#home" },
-  { displayedName: "Who We Are", href: "#who-we-are" },
-  { displayedName: "Services", href: "#services" },
+  { displayedName: 'Home', href: '#home' },
+  { displayedName: 'Who We Are', href: '#who-we-are' },
 ];
 
 export default function Header() {
@@ -15,13 +14,13 @@ export default function Header() {
 
   return (
     <header className="bg-primary text-primary-foreground">
-      <div className="flex justify-between items-center py-4 md:py-6 px-4 mx-auto w-full md:max-w-9/10">
+      <div className="flex justify-between items-center py-4 px-4 mx-auto w-full md:py-6 md:max-w-9/10">
         <img className="z-10 w-[175px]" src="./logo.svg" alt="ELAIOS logo" />
 
         {/* Desktop Nav */}
-        <nav className="hidden md:block text-base font-medium">
+        <nav className="hidden text-base font-medium md:block">
           <ul className="flex gap-6">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <li key={link.href}>
                 <Link to={link.href}>{link.displayedName}</Link>
               </li>
@@ -31,8 +30,8 @@ export default function Header() {
 
         {/* Mobile Burger Icon */}
         <button
-          className="md:hidden z-20"
-          onClick={() => setIsOpen((prev) => !prev)}
+          className="z-20 md:hidden"
+          onClick={() => setIsOpen(prev => !prev)}
         >
           {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
         </button>
@@ -41,11 +40,11 @@ export default function Header() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-60 pb-4" : "max-h-0"
+          isOpen ? 'max-h-60 pb-4' : 'max-h-0'
         }`}
       >
-        <ul className="flex flex-col items-center gap-4 text-base font-medium">
-          {navLinks.map((link) => (
+        <ul className="flex flex-col gap-4 items-center text-base font-medium">
+          {navLinks.map(link => (
             <li key={link.href}>
               <Link to={link.href} onClick={() => setIsOpen(false)}>
                 {link.displayedName}
