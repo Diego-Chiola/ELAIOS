@@ -11,13 +11,8 @@ export default function HomePage() {
         <img
           src={LeftBg}
           alt="left background"
-          className="object-contain object-left-top absolute top-0 left-0 h-[75%] min-w-2/3"
+          className="object-contain object-left-top absolute top-0 left-0 h-[90%] w-[100%]"
         />
-        {/* <img */}
-        {/*   src={RightBg} */}
-        {/*   alt="right background" */}
-        {/*   className="hidden object-cover absolute top-0 right-0 h-full lg:block" */}
-        {/* /> */}
       </div>
 
       <Container className="mt-12">
