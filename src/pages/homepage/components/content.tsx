@@ -1,10 +1,10 @@
-import Container from "../components/container";
+import Container from '../../../components/container';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../components/ui/card";
+} from '../../../components/ui/card';
 
 export default function Content() {
   return (
