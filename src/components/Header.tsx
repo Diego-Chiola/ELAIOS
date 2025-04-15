@@ -1,33 +1,34 @@
+'use client';
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { Button } from '../components/ui/button';
 
 const navLinks = [
   { displayedName: 'Home', href: '#home' },
   { displayedName: 'Who We Are', href: '#who-we-are' },
-  { displayedName: 'The Project', href: '#the-project' },
-  { displayedName: 'Furthers Features', href: '#furthers-features' },
+  { displayedName: 'Services', href: '#services' },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed z-10 w-full shadow-xl md:static bg-primary text-primary-foreground min-h-header">
-      <div className="flex justify-between items-center py-4 px-4 md:px-8">
-        <h1 className="text-3xl font-accent">
-          <Link to="/ELAIOS/">ELAIOS</Link>
-        </h1>
+    <header className="z-30 left-0 right-0 top-0 bg-primary text-primary-foreground fixed md:static">
+      <div className="flex justify-between items-center py-4 md:py-6 px-4 mx-auto w-full md:max-w-9/10">
+        <div className="w-[350px] mr-20">
+          <img className="z-10 w-[175px]" src="./logo.svg" alt="ELAIOS logo" />
+        </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden text-sm md:block">
-          <ul className="flex gap-8">
+        <nav className="hidden md:block text-base font-medium">
+          <ul className="flex">
             {navLinks.map(link => (
-              <li
-                key={link.href}
-                className="transition-transform hover:scale-105"
-              >
-                <Link to={link.href}>{link.displayedName}</Link>
+              <li key={link.href}>
+                <Button className="text-base" variant={'link'}>
+                  <Link to={link.href}>{link.displayedName}</Link>
+                </Button>
               </li>
             ))}
           </ul>
@@ -35,7 +36,7 @@ export default function Header() {
 
         {/* Mobile Burger Icon */}
         <button
-          className="z-20 cursor-pointer md:hidden"
+          className="hover:scale-[1.02] transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring [&_svg]:pointer-events-none md:hidden z-20"
           onClick={() => setIsOpen(prev => !prev)}
         >
           {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
@@ -44,19 +45,18 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-60 pb-4' : 'max-h-0'
+        className={`border-t md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-60 py-4' : 'max-h-0'
         }`}
       >
-        <ul className="flex flex-col gap-4 items-center">
+        <ul className="flex flex-col items-center gap-4 text-base font-medium">
           {navLinks.map(link => (
-            <li
-              key={link.href}
-              className="transition-transform hover:scale-105"
-            >
-              <Link to={link.href} onClick={() => setIsOpen(false)}>
-                {link.displayedName}
-              </Link>
+            <li key={link.href}>
+              <Button className="text-base" variant={'link'}>
+                <Link to={link.href} onClick={() => setIsOpen(false)}>
+                  {link.displayedName}
+                </Link>
+              </Button>
             </li>
           ))}
         </ul>

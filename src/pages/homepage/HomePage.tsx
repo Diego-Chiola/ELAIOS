@@ -1,11 +1,13 @@
 import Container from '../../components/Container';
 import Page from '../../components/Page';
+import Cards from './components/Cards';
+import Hero from './components/Hero';
 import LeftBg from './static/left-bg.svg';
 import RightBg from './static/right-bg.svg';
 
 export default function HomePage() {
   return (
-    <Page className="flex relative md:mt-0 h-screen-real mt-header">
+    <Page className="flex relative md:mt-0 mt-header">
       {/* Background images */}
       <div className="absolute inset-0 pointer-events-none z-[-100]">
         <img
@@ -22,15 +24,10 @@ export default function HomePage() {
 
       <Container className="mt-12">
         <main className="flex flex-col justify-center items-center">
-          <h1 className="text-7xl sm:text-9xl xs:text-8xl font-accent text-primary-foreground md:text-[200px]">
-            ELAIOS
-          </h1>
+          <Hero />
+          <Cards />
         </main>
       </Container>
-
-      {/* <p className="px-8 font-sans text-7xl md:px-0"> */}
-      {/*   Exploring Literary and Archaeological Insights on ancient Oil Studies */}
-      {/* </p> */}
     </Page>
   );
 }
