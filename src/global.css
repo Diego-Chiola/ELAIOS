@@ -1,0 +1,95 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  --font-accent: 'Cinzel', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Open Sans', sans-serif;
+
+  --color-background: hsl(0, 0%, 100%);
+  --color-foreground: hsl(0, 0%, 20%);
+
+  --color-primary: hsl(66, 100%, 10%);
+  --color-primary-foreground: 	hsl(63, 27%, 66%);
+
+  --color-hero: hsl(63, 27%, 40%);
+
+  --color-secondary: hsl(210, 22% 71%);
+  --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
+
+  --color-card-background: 		hsl(80, 20%, 85%);
+  --color-card-foreground: hsl(30, 25%, 25%);
+  --color-card-border: hsl(66, 100%, 10%);
+
+  --color-border: hsl(214.3 31.8% 91.4%);
+  --color-deep: hsl(219, 100%, 13%);
+
+  --breakpoint-xl: 420px;
+
+  --radius-lg: 0.5rem;
+  --radius-md: 0.5rem - 2px;
+  --radius-sm: 0.5rem - 4px;
+
+  --header-height: 85px;
+  --footer-height: 5rem;
+
+  /* Tainwd CSS */
+  --spacing-screen-real: calc(100vh - var(--header-height));
+  --spacing-header: var(--header-height);
+  --spacing-footer: var(--footer-height);
+  --spacing-container: min(100%, 1000px);
+
+  --breakpoint-xs: 420px;
+}
+
+@layer base {
+  :root {
+    @apply scroll-smooth;
+  }
+
+  * {
+    @apply border-border box-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    @apply bg-primary;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    @apply bg-secondary;
+  }
+  ::-webkit-scrollbar-track:active {
+    @apply bg-secondary;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
