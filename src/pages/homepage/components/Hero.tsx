@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center text-foreground">
+    <div className="flex flex-col items-center text-foreground md:mt-8">
       <h1 className="text-6xl xs:text-7xl sm:text-8xl font-accent md:text-[200px]">
         ELAIOS
       </h1>
