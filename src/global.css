@@ -22,7 +22,7 @@
   --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
 
   --color-card-background: 		hsl(80, 20%, 85%);
-  --color-card-foreground: hsl(30, 25%, 25%);
+  --color-card-foreground: hsl(0, 0%, 25%);
   --color-card-border: hsl(66, 100%, 10%);
 
   --color-border: hsl(214.3 31.8% 91.4%);

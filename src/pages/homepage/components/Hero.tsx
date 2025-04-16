@@ -5,7 +5,7 @@ export default function Hero() {
         ELAIOS
       </h1>
       <h2 className="text-center text-lg xs:text-xl sm:text-2xl font-accent mx-4 xs:mx-8 sm:mx-12 lg:mx-0">
-        Exploring Literary and Archaeological Insights on ancient Oil Studies
+        Exploring Literary and Archeological Insights on ancient Oil Studies
       </h2>
     </div>
   );
