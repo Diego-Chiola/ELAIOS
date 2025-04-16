@@ -1,16 +1,16 @@
 export default function Footer() {
   return (
     <footer className="mt-auto">
-      <div className="flex justify-evenly p-6 h-[var(--footer-height)] bg-primary text-primary-foreground">
+      <div className="flex justify-evenly items-center p-6 min-h-[var(--footer-height)] bg-primary text-primary-foreground">
         <div className="w-full">
-          <div className="w-fit">
-            <h1 className="font-serif font-bold text-lg/3">Bombo</h1>
-            <h2 className="font-serif text-xs/3 text-end">Enterprise</h2>
-          </div>
+          <img className="z-10 w-[150px]" src="./logo.svg" alt="ELAIOS logo" />
         </div>
-        <p className="w-full text-end text-base/4">
+        <p className="flex flex-col gap-3 w-full text-end text-base/4">
           <span className="font-semibold">University of Genova</span>
-          <br /> project for Martina Biamino
+          <div className="flex flex-col gap-1">
+            <span>Martina Biamino</span>
+            <span>Diego Chiola</span>
+          </div>
         </p>
       </div>
     </footer>
