@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { Button } from '../components/ui/button';
+import { getPath } from '../lib/utils';
 
 const navLinks = [
-  { displayedName: 'Home', href: '#home' },
-  { displayedName: 'Who We Are', href: '#who-we-are' },
-  { displayedName: 'Services', href: '#services' },
+  { displayedName: 'Home', href: getPath('') },
+  { displayedName: 'The Project', href: getPath('about') },
 ];
+
+console.log(navLinks);
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

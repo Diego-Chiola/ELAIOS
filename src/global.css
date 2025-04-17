@@ -14,9 +14,9 @@
   --color-foreground: hsl(0, 0%, 20%);
 
   --color-primary: hsl(66, 100%, 10%);
-  --color-primary-foreground: 	hsl(63, 27%, 66%);
+  --color-primary-foreground: hsl(63, 27%, 66%);
 
-  --color-hero: hsl(63, 27%, 40%);
+  --color-link: hsl(66, 100%, 10%);
 
   --color-secondary: hsl(210, 22% 71%);
   --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
@@ -38,7 +38,7 @@
   --footer-height: 5rem;
 
   /* Tainwd CSS */
-  --spacing-screen-real: calc(100vh - var(--header-height));
+  --spacing-screen-real: calc(100dvh - var(--header-height));
   --spacing-header: var(--header-height);
   --spacing-footer: var(--footer-height);
   --spacing-container: min(100%, 1000px);
