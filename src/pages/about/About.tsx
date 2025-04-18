@@ -8,7 +8,7 @@ export default function About() {
   return (
     <Page className="flex relative md:mt-0 mt-header">
       <div
-        className="absolute inset-0 bg-[url('./background_olive_trees.png')] bg-cover bg-center opacity-60 z-0"
+        className="absolute inset-0 bg-[url('./about_bg.svg')] bg-cover bg-center opacity-80 z-0"
         aria-hidden="true"
       ></div>
       <Container className="mt-16 md:mt-24 z-10">
